@@ -45,7 +45,7 @@ class OTAImagePlugin(RawCopyPlugin):
 
         logger.debug('Bootimg dir: %s' % bootimg_dir)
 
-        src = bootimg_dir + "/" + get_bitbake_var("IMAGE_LINK_NAME") + ".otaimg"
+        src = bootimg_dir + "/" + get_bitbake_var("IMAGE_LINK_NAME") + ".otaimg.ext4"
 
         logger.debug('Preparing partition using image %s' % (src))
         source_params['file'] = src
