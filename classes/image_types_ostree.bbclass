@@ -63,6 +63,10 @@ IMAGE_CMD_ostree () {
         ln -s ../init.d/tmpfiles.sh usr/etc/rcS.d/S20tmpfiles.sh
     fi
 
+    # Use kargs.d for kernel arguments
+    mkdir -p usr/lib/ostree-boot/kargs.d
+    echo -n "${OSTREE_KERNEL_ARGS}" > usr/lib/ostree-boot/kargs.d/2000_torizon
+
     # Preserve OSTREE_BRANCHNAME for future information
     mkdir -p usr/share/sota/
     echo -n "${OSTREE_BRANCHNAME}" > usr/share/sota/branchname
